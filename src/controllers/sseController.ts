@@ -18,6 +18,5 @@ export function handleConnection(req: Request, res: Response): void {
     console.info('Client has connected.');
     res.writeHead(200, HEADERS);
     const uuid = addClient(res);
-    res.write('data: hi\n\n');
     req.on('close', handleConnectionClose.bind(null, uuid));
 }

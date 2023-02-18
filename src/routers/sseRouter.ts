@@ -4,4 +4,4 @@ import { handleConnection } from '../controllers';
 
 export const router = express.Router();
 
-router.get('/api/events', handleConnection);
+router.get('/event-stream', handleConnection);

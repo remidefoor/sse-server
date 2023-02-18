@@ -8,7 +8,7 @@ import { Client } from '../models';
 
 const EVT_FEED_INTERVAL = process.env.EVT_FEED_INTERVAL || 5000;
 
-const clients: Client[] = [];
+export const clients: Client[] = [];
 
 export function addClient(res: Response): string {
     const uuid = uuidv4();
@@ -25,7 +25,7 @@ export function removeClient(uuid: string): void {
     logEvt(`Connected clients: ${clients.length}.`);
 }
 
-export function simulateEvtFeed(): void {
+export function simulateEvtStream(): void {
     const evt = 'Hello, World!';
     setInterval(broadcastEvt.bind(null, clients, evt), EVT_FEED_INTERVAL);
 }

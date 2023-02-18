@@ -3,7 +3,7 @@ import 'dotenv/config';
 import express from 'express';
 
 import { sseRouter } from './routers';
-import { simulateEvtFeed, logEvt } from './services';
+import { simulateEvtStream, logEvt } from './services';
 
 const PORT = process.env.PORT || 3000;
 
@@ -13,7 +13,7 @@ app.use(cors());
 
 app.use(sseRouter);
 
-simulateEvtFeed();
+simulateEvtStream();
 
 app.listen(PORT, () => {
    logEvt(`SSE server is running on port ${PORT}.`);

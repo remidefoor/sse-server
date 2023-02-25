@@ -1,1 +1,2 @@
-export { Client } from './client.interface';
+export * from './client.interface';
+export * from './soccerEvt.interface';

@@ -1,3 +1,7 @@
-export function logEvt(log: string): void {
-    console.info(log);
+export function logEvt(evt: string): void {
+    console.info(evt);
+}
+
+export function logErr(err: string): void {
+    console.error(err)
 }

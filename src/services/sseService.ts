@@ -2,7 +2,7 @@ import 'dotenv/config';
 import { Response } from 'express';
 import { v4 as uuidv4 } from 'uuid';
 
-import { broadcastEvt } from './evtService';
+import { broadcastSoccerEvt } from './evtService';
 import { logEvt } from './logService';
 import { Client } from '../models';
 
@@ -26,6 +26,5 @@ export function removeClient(uuid: string): void {
 }
 
 export function simulateEvtStream(): void {
-    const evt = 'Hello, World!';
-    setInterval(broadcastEvt.bind(null, clients, evt), EVT_FEED_INTERVAL);
+    setInterval(broadcastSoccerEvt.bind(null, clients), EVT_FEED_INTERVAL);
 }

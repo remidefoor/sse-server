@@ -4,6 +4,7 @@ import { SoccerEvt } from '../models';
 import { logErr } from '../services';
 
 const FALLBACK_EVT: SoccerEvt = {
+    id: -1,
     title: "",
     body: "The event feed is currently unavailable.",
     minute: -1,
